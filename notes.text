@@ -1,0 +1,15 @@
+Customizer/Front End Edits:
+1) Bold and highlighted menu items: In Customizer->Menus->Settings (gear icon) you can add the option to add CSS classes to menu items. Go to the menu item in question (eg Menus->Header Menu->Gutenberg Optimization) and add the class you want (eg menu-bold)
+2) Sidebar/Content and Full Width layouts: in Genesis Settings (click the Genesis icon in the top toolbar) in the Editor
+3) Featured Image on singleton posts: Customizer->Theme Settings->Singular Content->Show Featured Images on Posts
+4) Featured Image on category pages: Customizer->Theme Settings->Content Archives->Display the featured image?
+5) Excerpts on category pages: Customizer->Theme Settings->Content Archives->change Entry content to Entry excerpts
+
+Stylesheet Edits:
+
+PHP Edits:
+1) Readmore links -> added code snippet from documentation to functions.php
+
+
+Other Miscellaneous Edits:
+1) for some reason the GC Code Arc plugin changes the background color (??), so I removed that

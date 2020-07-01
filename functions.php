@@ -199,3 +199,9 @@ function genesis_sample_comments_gravatar( $args ) {
 	return $args;
 
 }
+
+//* js edit - Modify the read more link
+add_filter('excerpt_more','sp_read_more_link');	// this is from the gc-ea theme
+function sp_read_more_link() {
+	return '<p><a class="more-link" href="' . get_permalink() . '">Continue Reading</a></p>';
+}
