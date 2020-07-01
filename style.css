@@ -1,11 +1,11 @@
 /*
-Theme Name: Genesis Sample
-Theme URI: https://demo.studiopress.com/
-Description: This is the sample theme created for the Genesis Framework.
-Author: StudioPress
-Author URI: https://www.studiopress.com/
+Theme Name: GC Twenty
+Theme URI: https://www.globalcognition.org/
+Description: 2020 theme for Global Cognition, based on StudioPress's GC Twenty starter theme
+Author: Jorie Sieck
+Author URI: https://www.joriesieck.com/
 
-Version: 3.3.0
+Version: 0.1
 
 Tags: accessibility-ready, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, left-sidebar, one-column, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, two-columns, wide-blocks
 
@@ -14,7 +14,7 @@ Template: genesis
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Text Domain: genesis-sample
+Text Domain: gc-twenty
 Requires at least: 5.4
 Requires PHP: 5.6
 */
@@ -25,6 +25,7 @@ Requires PHP: 5.6
 	- Box Sizing
 	- Float Clearing
 - Defaults
+	- Variable Declarations
 	- Typographical Elements
 	- Headings
 	- Objects
@@ -145,6 +146,14 @@ html {
 
 /* Defaults
 ---------------------------------------------------------------------------- */
+/* js edit - Variable Declarations
+--------------------------------------------- */
+body {
+	--dark-blue: #293f5e;	/* site header and buttons */
+	--burgundy: #800020; /* links */
+	--white: #fff; /* some backgrounds, nav menu links */
+	--gray: #aaa;	/* nav menu focus and hover */
+}
 
 /* Typographical Elements
 --------------------------------------------- */
@@ -992,7 +1001,7 @@ figcaption,
 ---------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: #fff;
+	background-color: var(--dark-blue);	/* js edit */
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 	padding: 0 30px;
 }
@@ -1059,7 +1068,7 @@ figcaption,
 }
 
 .genesis-nav-menu a {
-	color: #333;
+	color: var(--white);	/* js edit */
 	display: block;
 	font-size: 15px;
 	font-weight: 400;
@@ -1074,7 +1083,7 @@ figcaption,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
-	color: #0073e5;
+	color: var(--gray); /* js edit */
 	text-decoration: none;
 }
 

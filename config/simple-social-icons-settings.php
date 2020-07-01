@@ -1,8 +1,8 @@
 <?php
 /**
- * Genesis Sample Simple Social Icons default settings.
+ * GC Twenty Simple Social Icons default settings.
  *
- * @package Genesis Sample
+ * @package GC Twenty
  * @author  StudioPress
  * @license GPL-2.0-or-later
  * @link    https://www.studiopress.com/

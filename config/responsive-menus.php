@@ -1,11 +1,11 @@
 <?php
 /**
- * Genesis Sample child theme.
+ * GC Twenty child theme.
  *
- * @package Genesis Sample
+ * @package GC Twenty
  * @author  StudioPress
  * @license GPL-2.0-or-later
- * @link    https://my.studiopress.com/themes/genesis-sample/
+ * @link    https://my.studiopress.com/themes/gc-twenty/
  */
 
 /**

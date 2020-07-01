@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Sample child theme.
+ * GC Twenty child theme.
  *
  * Theme supports.
  *
- * @package Genesis Sample
+ * @package GC Twenty
  * @author  StudioPress
  * @license GPL-2.0-or-later
- * @link    https://my.studiopress.com/themes/genesis-sample/
+ * @link    https://my.studiopress.com/themes/gc-twenty/
  */
 
 return [
@@ -36,7 +36,7 @@ return [
 	'genesis-after-entry-widget-area' => '',
 	'genesis-footer-widgets'          => 3,
 	'genesis-menus'                   => [
-		'primary'   => __( 'Header Menu', 'genesis-sample' ),
-		'secondary' => __( 'Footer Menu', 'genesis-sample' ),
+		'primary'   => __( 'Header Menu', 'gc-twenty' ),
+		'secondary' => __( 'Footer Menu', 'gc-twenty' ),
 	],
 ];
