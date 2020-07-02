@@ -151,16 +151,21 @@ html {
 body {
 	--dark-blue: #293f5e;	/* site header and buttons, author/category page titles */
 	--burgundy: #800020; /* links */
-	--white: #fff; /* some backgrounds, nav menu links, footers links */
+	--white: #fff; /* backgrounds, nav menu links, footers links */
 	--gray: #aaa;	/* nav menu focus and hover, footer p */
 	--super-dark-gray: #222; /* nav menu dropdown */
 	--dark-gray: #303236; /* dark gray home widget, 3 part footer, nmd hover */
 	--off-black: #1a1a1a;	/* site footer */
-	--light-gray: #ccc;	/* link hover */
+	--light-gray: #ccc;	/* link hover, focus outline */
 	--super-light-gray: #f2f2f2;	/* site background */
 	--medium-dark-gray: #444;	/* body text */
-	--off-gray: #eee;	/* entry meta */
-	--dark-gray-1: #ddd; /* comment reply border, odd comments */
+	--off-gray: #eee;	/* entry meta, hr, gallery img border, disabled background, tables, breadcrumb border, featured content background, faq border*/
+	--dark-gray-1: #ddd; /* comment reply border, odd comments, mark background */
+	--dark-gray-2: #333;	/* mark text, input text, placeholders, screen reader text, entry & widget titles, faq text, focus text, menu toggle text, archive pagination text, nav menu highlight bg, media print text */
+	--light-gray-1: #777; /* disabled text */
+	--light-gray-2: #999; /* gallery img hover border, input focus border, blockquote border */
+	--dark-white: #f5f5f5;	/* enews background, entry content code & sticky background, archive pagination bg */
+	--blue: #0073e5; /* sample uses this for a lot of hovers, i don't like it */
 }
 
 /* Typographical Elements
@@ -235,7 +240,7 @@ hr {
 	border-collapse: collapse;
 	border-bottom: 1px solid currentColor;
 	clear: both;
-	color: #eee;
+	color: var(--off-gray);
 	margin: 1.65em auto;
 }
 
@@ -252,8 +257,8 @@ i {
 }
 
 mark {
-	background: #ddd;
-	color: #333;
+	background: var(--dark-gray-1);
+	color: var(--dar-gray-2);
 }
 
 blockquote {
@@ -337,14 +342,14 @@ figure {
 }
 
 .gallery img {
-	border: 1px solid #eee;
+	border: 1px solid var(--off-gray);
 	height: auto;
 	padding: 4px;
 }
 
 .gallery img:focus,
 .gallery img:hover {
-	border: 1px solid #999;
+	border: 1px solid var(--light-gray-2);
 	outline: none;
 }
 
@@ -409,7 +414,7 @@ select,
 textarea {
 	background-color: var(--white);
 	border: 1px solid var(--dark-gray-1);
-	color: #333;
+	color: var(--dark-gray-2);
 	font-size: 18px;
 	font-weight: 400;
 	padding: 15px;
@@ -418,7 +423,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-	border: 1px solid #999;
+	border: 1px solid var(--light-gray-2);
 	outline: none;
 }
 
@@ -429,17 +434,17 @@ input[type="radio"] {
 }
 
 ::-ms-input-placeholder {
-	color: #333;
+	color: var(--dark-gray-2);
 	opacity: 1;
 }
 
 :-ms-input-placeholder {
-	color: #333;
+	color: var(--dark-gray-2);
 	opacity: 1;
 }
 
 ::placeholder {
-	color: #333;
+	color: var(--dark-gray-2);
 	opacity: 1;
 }
 
@@ -467,6 +472,7 @@ input[type="submit"],
 	width: auto;
 }
 
+/* js edit add wp... and ab-button */
 button:focus,
 button:hover,
 input[type="button"]:focus,
@@ -480,7 +486,9 @@ input[type="submit"]:hover,
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"]:focus,
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"]:hover,
 .button:focus,
-.button:hover {
+.button:hover,
+.wp-block-button__link:hover,
+.ab-button:hover {
 	/*background-color: #0073e5; js edit remove*/
 	opacity: .7;	/* js edit addition */
 	border-width: 0;
@@ -506,9 +514,9 @@ input[type="submit"]:hover,
 .site-container input[type="reset"]:disabled:hover,
 .site-container input[type="submit"]:disabled,
 .site-container input[type="submit"]:disabled:hover {
-	background-color: #eee;
+	background-color: var(--off-gray);
 	border-width: 0;
-	color: #777;
+	color: var(--light-gray-1);
 	cursor: not-allowed;
 }
 
@@ -529,7 +537,7 @@ table {
 }
 
 tbody {
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid var(--off-gray);
 }
 
 td,
@@ -544,7 +552,7 @@ td {
 }
 
 tr {
-	border-top: 1px solid #eee;
+	border-top: 1px solid var(--off-gray);
 }
 
 th {
@@ -573,7 +581,7 @@ th {
 	background: var(--white);
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
-	color: #333;
+	color: var(--dark-gray-2);
 	display: block;
 	font-size: 1em;
 	font-weight: 700;
@@ -667,7 +675,7 @@ th {
 }
 
 .breadcrumb {
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid var(--off-gray);
 	font-size: 16px;
 	margin-bottom: 40px;
 	padding-bottom: 10px;
@@ -728,7 +736,7 @@ th {
 
 .entry-title a,
 .sidebar .widget-title a {
-	color: #333;
+	color: var(--dark-gray-2);
 	text-decoration: none;
 }
 
@@ -868,7 +876,7 @@ figcaption,
 --------------------------------------------- */
 
 .featured-content .entry {
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid var(--off-gray);
 	margin-bottom: 20px;
 }
 
@@ -901,7 +909,7 @@ figcaption,
 }
 
 .sidebar .enews {
-	background-color: #f5f5f5;
+	background-color: var(--dark-white);
 	padding: 30px;
 }
 
@@ -928,8 +936,8 @@ figcaption,
 
 .gs-faq__question {
 	background: transparent;
-	border-bottom: 1px solid #eee;
-	color: #333;
+	border-bottom: 1px solid var(--off-gray);
+	color: var(--dark-gray-2);
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -937,7 +945,7 @@ figcaption,
 .gs-faq__question:focus,
 .gs-faq__question:hover {
 	background: transparent;
-	color: #0073e5;
+	color: var(--blue);
 }
 
 .gs-faq__question::after {
@@ -1021,8 +1029,8 @@ figcaption,
 
 /* Display outline on focus */
 :focus {
-	color: #333;
-	outline: #ccc solid 1px;
+	color: var(--dark-gray-2);
+	outline: var(--light-gray) solid 1px;
 }
 
 
@@ -1184,7 +1192,7 @@ figcaption,
 .sub-menu-toggle {
 	background-color: transparent;
 	border-width: 0;
-	color: #333;
+	color: var(--dark-gray-2);
 	display: block;
 	margin: 0 auto;
 	overflow: hidden;
@@ -1198,7 +1206,7 @@ figcaption,
 .sub-menu-toggle:hover {
 	background-color: transparent;
 	border-width: 0;
-	color: #0073e5;
+	color: var(--blue);
 }
 
 .menu-toggle {
@@ -1329,11 +1337,11 @@ figcaption,
 }
 
 .entry-content code {
-	background-color: #f5f5f5;
+	background-color: var(--dark-white);
 }
 
 .content .sticky {
-	background-color: #f5f5f5;
+	background-color: var(--dark-white);
 	padding: 30px;
 }
 
@@ -1394,8 +1402,8 @@ p.entry-meta {
 }
 
 .archive-pagination li a {
-	background-color: #f5f5f5;
-	color: #333;
+	background-color: var(--dark-white);
+	color: var(--dark-gray-2);
 	cursor: pointer;
 	display: inline-block;
 	font-size: 16px;
@@ -1408,7 +1416,7 @@ p.entry-meta {
 .archive-pagination li a:focus,
 .archive-pagination li a:hover,
 .archive-pagination li.active a {
-	background-color: #333;
+	background-color: var(--dark-gray-2);
 	color: var(--white);
 }
 
@@ -1506,7 +1514,7 @@ p.entry-meta {
 ---------------------------------------------------------------------------- */
 /* js edit change footer widget colors */
 .footer-widgets {
-	border-top: 1px solid #eee;
+	/* border-top: 1px solid #eee; */
 	background-color: var(--dark-gray);	/* js edit */
 	color: var(--white);	/* js edit addition */
 	clear: both;
@@ -1603,7 +1611,7 @@ p.entry-meta {
 	}
 
 	.genesis-nav-menu > .menu-highlight > a {
-		background-color: #333;
+		background-color: var(--dark-gray-2);
 		border-radius: 3px;
 		color: var(--white);
 		font-weight: 600;
@@ -1614,7 +1622,7 @@ p.entry-meta {
 
 	.genesis-nav-menu > .menu-highlight > a:focus,
 	.genesis-nav-menu > .menu-highlight > a:hover {
-		background-color: #0073e5;
+		background-color: var(--blue);
 	}
 
 	.genesis-nav-menu .sub-menu,
@@ -1831,7 +1839,7 @@ p.entry-meta {
 	*::after {
 		background: transparent !important;
 		box-shadow: none !important;
-		color: #333 !important;
+		color: var(--dark-gray-2) !important;
 		text-shadow: none !important;
 	}
 
@@ -1880,7 +1888,7 @@ p.entry-meta {
 
 	blockquote,
 	pre {
-		border: 1px solid #999;
+		border: 1px solid var(--light-gray-2);
 		page-break-inside: avoid;
 	}
 

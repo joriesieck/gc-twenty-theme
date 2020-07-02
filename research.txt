@@ -1,0 +1,24 @@
+• Figure out all the fonts genesis sample is using (and where), along with all the fonts we are using in GC Sixteen (and where) – font family and sizes
+• Figure out blocks and atomic blocks – read docs, search google for other info, and test out
+		◦ https://atomicblocks.com/
+		◦ Are ab columns better than standard wp columns? Why, if so?
+		◦ What are post grid and container blocks – use cases for them? How do they help? Should we consider using one of them for our home page?
+		◦ Can we hide blocks not in use (e.g. hide standard columns if using ab columns)
+		◦ How to style standard wp and ab blocks (or, is it all done “in line”)?
+• How to make simple custom blocks, if needed -> replace epik boxes and buttons
+		◦ Pin down what boxes and buttons we need; colors and styles to match the site
+• Use of featured image setting (in page or post editor)
+		◦ Also, what’s future of featured image in Gutenberg world?
+		◦ Post images – can do medium, left-aligned for full screen. Then, full width for phone-size?
+• Can “after post” section be category dependent (like genesis sidebars?)
+		◦ E.g. have a “learning skills after post”
+• Read through the genesis AMP docs (plus yoast below) – prep to talk over recommendations again
+		◦ https://yoast.com/weekly-seo-recap-41/
+		◦ https://yoast.com/3-seo-quick-wins/
+		◦ https://yoast.com/setting-up-wordpress-for-amp-accelerated-mobile-pages/
+• Plugins
+		◦ I’ve read that Smush is pretty worthless for optimizing images. What’s a better alternative, if so?
+• Author pages vs about pages – make one for key gc members?
+		◦ E.g. check out the yoast approach (overkill for us, but food for thought):
+				▪ https://yoast.com/about-us/team/michiel-heijmans/
+				▪ https://yoast.com/ux-button-design/ (scroll over post author name)
