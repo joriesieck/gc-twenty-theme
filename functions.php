@@ -219,3 +219,28 @@ function gc_twenty_full_width_after() {
 		echo '</div>';
 	}
 }
+
+//* js edit - add 'after-post' widget from epik
+genesis_register_sidebar(array(
+	'id' => 'after-post',
+	'name' => __('After Post', 'gc-twenty'),
+	'description' => __('This is the after post section', 'gc-twenty')
+));
+add_action('genesis_after_entry_content','gc_twenty_after_post');
+function gc_twenty_after_post() {
+	if(is_singular('post')) {
+		genesis_widget_area('after-post',array(
+			'before' => '<div class="after-post" widget-area>',
+			'after' => '</div>'
+		));
+	}
+}
+
+//* js edit - Remove description on paginated archives
+add_action('genesis_before_content','gc_twenty_archive_description');
+function gc_twenty_archive_description() {
+	if(get_query_var('paged')>1) {
+		remove_action('genesis_before_loop','genesis_do_taxonomy_title_description',15);
+		remove_action('genesis_before_loop','genesis_do_author_title_description',15);
+	}
+}

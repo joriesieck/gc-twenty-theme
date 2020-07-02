@@ -24,12 +24,19 @@ header - link color, background color, hover color, submenu colors, margin-botto
 footer widgets - background color, font colors (inc links)
 site footer - background color, font colors (inc links)
 links - color, text decoration
-entry - add white 'floating' box, entry content and title padding
+entry - add white 'floating' box, entry content and title padding, remove excess padding, title link hover
 buttons - background color
 front page content - change width
+entry meta - border top/bottom, text transform, footer background
+author box - background color
+comments - background color, padding, border radius, children border
+author page - archive description, heading
+remove bottom margin from last children
 
 functions.php:
 add class to front page content to fix width
+add 'after-post' widget from epik
+remove description on 2nd+ page for paginated archives
 
 other files:
 gutenberg/inline-styles.php - remove gutenberg-specific button styling
@@ -38,3 +45,6 @@ gutenberg/front-end.css - remove gutenberg-specific button styling
 
 Customizer:
 add logo to header - set max-width to 220px
+change entry meta to "by [post_author_posts_link] [post_comments] [post_edit] updated [post_modified_date]"
+this isn't the customizer but enabling profile settings (title, description) for the author pages
+archive - set content to 'entry excerpts'
