@@ -1,24 +1,56 @@
-• Figure out all the fonts genesis sample is using (and where), along with all the fonts we are using in GC Sixteen (and where) – font family and sizes
-• Figure out blocks and atomic blocks – read docs, search google for other info, and test out
+########################################################################################################################################################
+Figure out all the fonts genesis sample is using (and where), along with all the fonts we are using in GC Sixteen (and where) – font family and sizes
+Genesis Sample Fonts/Sizing:
+- Font: "Source Sans Pro", sans serif -> this is the only font used in this theme
+- Sizing:
+-- 30px: h1, entry titles
+-- 27px: h2
+-- 24px: h3
+-- 20px: h4, archive titles, author box titles, site title
+-- 18px: body (default), h5, widget titles
+-- 16px: h6, buttons, breadcrumbs, featured content titles, enews input, entry meta, archive pagination, sidebar
+-- 15px: nav menu links, site footer
+-- 14px: wpforms field labels, nav submenu links, captions
+-- 1em: screen reader focus text
+- Weights:
+-- 700: screen reader focus text, menu-bold
+-- 600: entry content h3 & h4, buttons, th, archive title, author box title, widget titles, captions, wpforms field labels, site title, archive pagination links, menu-highlight
+-- 400: body (default)
+-- 300: wpforms field sublabels
+
+########################################################################################################################################################
+Figure out blocks and atomic blocks – read docs, search google for other info, and test out
 		◦ https://atomicblocks.com/
 		◦ Are ab columns better than standard wp columns? Why, if so?
 		◦ What are post grid and container blocks – use cases for them? How do they help? Should we consider using one of them for our home page?
 		◦ Can we hide blocks not in use (e.g. hide standard columns if using ab columns)
 		◦ How to style standard wp and ab blocks (or, is it all done “in line”)?
-• How to make simple custom blocks, if needed -> replace epik boxes and buttons
+
+########################################################################################################################################################
+How to make simple custom blocks, if needed -> replace epik boxes and buttons
 		◦ Pin down what boxes and buttons we need; colors and styles to match the site
-• Use of featured image setting (in page or post editor)
+
+########################################################################################################################################################
+Use of featured image setting (in page or post editor)
 		◦ Also, what’s future of featured image in Gutenberg world?
 		◦ Post images – can do medium, left-aligned for full screen. Then, full width for phone-size?
-• Can “after post” section be category dependent (like genesis sidebars?)
+
+########################################################################################################################################################
+Can “after post” section be category dependent (like genesis sidebars?)
 		◦ E.g. have a “learning skills after post”
-• Read through the genesis AMP docs (plus yoast below) – prep to talk over recommendations again
+
+########################################################################################################################################################
+Read through the genesis AMP docs (plus yoast below) – prep to talk over recommendations again
 		◦ https://yoast.com/weekly-seo-recap-41/
 		◦ https://yoast.com/3-seo-quick-wins/
 		◦ https://yoast.com/setting-up-wordpress-for-amp-accelerated-mobile-pages/
-• Plugins
+
+########################################################################################################################################################
+Plugins
 		◦ I’ve read that Smush is pretty worthless for optimizing images. What’s a better alternative, if so?
-• Author pages vs about pages – make one for key gc members?
+
+########################################################################################################################################################
+Author pages vs about pages – make one for key gc members?
 		◦ E.g. check out the yoast approach (overkill for us, but food for thought):
 				▪ https://yoast.com/about-us/team/michiel-heijmans/
 				▪ https://yoast.com/ux-button-design/ (scroll over post author name)
