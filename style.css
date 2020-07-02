@@ -149,10 +149,16 @@ html {
 /* js edit - Variable Declarations
 --------------------------------------------- */
 body {
-	--dark-blue: #293f5e;	/* site header and buttons */
+	--dark-blue: #293f5e;	/* site header and buttons, author/category page titles */
 	--burgundy: #800020; /* links */
-	--white: #fff; /* some backgrounds, nav menu links */
-	--gray: #aaa;	/* nav menu focus and hover */
+	--white: #fff; /* some backgrounds, nav menu links, footers links */
+	--gray: #aaa;	/* nav menu focus and hover, footer p */
+	--super-dark-gray: #222; /* nav menu dropdown */
+	--dark-gray: #303236; /* dark gray home widget, 3 part footer, nmd hover */
+	--off-black: #1a1a1a;	/* site footer */
+	--light-gray: #ccc;	/* link hover */
+	--super-light-gray: #f2f2f2;	/* site background */
+	--medium-dark-gray: #444;	/* body text */
 }
 
 /* Typographical Elements
@@ -164,14 +170,19 @@ html {
 }
 
 body {
-	background-color: #fff;
-	color: #333;
+	background-color: var(--super-light-gray);	/* js edit change site background */
+	color: var(--medium-dark-gray);	/* js edit change body text */
 	font-family: "Source Sans Pro", sans-serif;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 1.625;
 	margin: 0;
 	overflow-x: hidden;
+}
+
+/* js edit - fix content on front page */
+.gc-twenty-front-page {
+	background-color: var(--white);
 }
 
 button,
@@ -184,17 +195,17 @@ textarea:focus,
 .gallery img {
 	transition: all 0.2s ease-in-out;
 }
-
+/* js edit - change link color, hover color, text decoration */
 a {
-	color: #0073e5;
-	text-decoration: underline;
+	color: var(--burgundy);	/* js edit */
+	text-decoration: none;	/* js edit */
 	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 a:focus,
 a:hover {
-	color: #333;
-	text-decoration: none;
+	color: var(--light-gray);	/* js edit */
+	text-decoration: underline; /* js edit */
 }
 
 p {
@@ -425,16 +436,19 @@ input[type="radio"] {
 	opacity: 1;
 }
 
+/* js edit buttons - add wp-block-button__link, ab-button class to this styling */
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"],
-.button {
-	background-color: #333;
+.button,
+.wp-block-button__link,
+.ab-button {
+	background-color: var(--dark-blue) !important;	/* js edit button color */
 	border: 0;
-	border-radius: 5px;
+	border-radius: 5px !important;	/* js edit - make important bc of gutenberg */
 	color: #fff;
 	cursor: pointer;
 	font-size: 16px;
@@ -460,7 +474,8 @@ input[type="submit"]:hover,
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"]:hover,
 .button:focus,
 .button:hover {
-	background-color: #0073e5;
+	/*background-color: #0073e5; js edit remove*/
+	opacity: .7;	/* js edit addition */
 	border-width: 0;
 	color: #fff;
 }
@@ -701,6 +716,7 @@ th {
 .entry-title {
 	font-size: 30px;
 	margin-bottom: 10px;
+	padding: 20px;	/* js edit fix entry title padding */
 }
 
 .entry-title a,
@@ -1001,9 +1017,10 @@ figcaption,
 ---------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: var(--dark-blue);	/* js edit */
+	background-color: var(--dark-blue);	/* js edit change site header background */
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 	padding: 0 30px;
+	margin-bottom: 40px;	/* js edit add 'gray bar' under header */
 }
 
 /* Title Area
@@ -1067,6 +1084,7 @@ figcaption,
 	position: relative;
 }
 
+/* js edit change nav menu links */
 .genesis-nav-menu a {
 	color: var(--white);	/* js edit */
 	display: block;
@@ -1080,9 +1098,7 @@ figcaption,
 
 .genesis-nav-menu a:focus,
 .genesis-nav-menu a:hover,
-.genesis-nav-menu .current-menu-item > a,
-.genesis-nav-menu .sub-menu .current-menu-item > a:focus,
-.genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+.genesis-nav-menu .current-menu-item > a {
 	color: var(--gray); /* js edit */
 	text-decoration: none;
 }
@@ -1103,8 +1119,10 @@ figcaption,
 	z-index: 99;
 }
 
+/* js edit change submenu colors */
 .genesis-nav-menu .sub-menu a {
-	background-color: #fff;
+	background-color: var(--super-dark-gray);	/* js edit */
+	color: var(--white);	/* js edit addition */
 	font-size: 14px;
 	position: relative;
 	word-wrap: break-word;
@@ -1115,7 +1133,13 @@ figcaption,
 	position: relative;
 }
 
-.genesis-nav-menu .menu-item:hover > .sub-menu {
+/* js edit - add sub menu tags */
+/* .genesis-nav-menu .menu-item:hover > .sub-menu, */
+.genesis-nav-menu .sub-menu a:focus,
+.genesis-nav-menu .sub-menu a:hover,
+.genesis-nav-menu .sub-menu .current-menu-item a:focus,
+.genesis-nav-menu .sub-menu .current-menu-item a:hover {
+	background-color: var(--dark-gray);	/* js edit - addition */
 	display: block;
 	left: auto;
 	opacity: 1;
@@ -1247,9 +1271,19 @@ figcaption,
 
 /* Entry Content
 --------------------------------------------- */
+/* js edit add white 'floating' box for entry, except on the front page */
+.entry:not(.gc-twenty-front-page .entry) {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0, .2);
+	background: var(--white);
+	margin: 0 3px 40px;
+	padding: 0;	/* padding is now in the entry-title because otherwise the front page gets fucked up */
+}
 
-.entry {
-	margin-bottom: 40px;
+/* js edit addition */
+.entry-content {
+	padding: 0 20px 20px;
 }
 
 .entry-content ol,
@@ -1418,12 +1452,18 @@ p.entry-meta {
 
 /* Footer Widgets
 ---------------------------------------------------------------------------- */
-
+/* js edit change footer widget colors */
 .footer-widgets {
 	border-top: 1px solid #eee;
-	background-color: #fff;
+	background-color: var(--dark-gray);	/* js edit */
+	color: var(--white);	/* js edit addition */
 	clear: both;
 	padding: 60px 0;
+}
+
+/* js edit addition */
+.footer-widgets a {
+	color: var(--white);
 }
 
 .footer-widgets .wrap {
@@ -1445,10 +1485,10 @@ p.entry-meta {
 
 /* Site Footer
 ---------------------------------------------------------------------------- */
-
+/* js edit change site footer colors */
 .site-footer {
-	background-color: #fff;
-	border-top: 1px solid #eee;
+	background-color: var(--off-black);	/* js edit */
+	/*border-top: 1px solid #eee; js edit remove */
 	font-size: 15px;
 	line-height: 1.5;
 	padding: 30px;
@@ -1457,6 +1497,12 @@ p.entry-meta {
 
 .site-footer p {
 	margin-bottom: 0;
+	color: var(--gray);	/* js edit addition */
+}
+
+/* js edit addition */
+.site-footer a {
+	color: var(--white);
 }
 
 
@@ -1523,9 +1569,9 @@ p.entry-meta {
 	.genesis-nav-menu .sub-menu a {
 		width: 180px;
 	}
-
+/* js edit remove border from submenu */
 	.genesis-nav-menu .sub-menu {
-		border-top: 1px solid #eee;
+		/*border-top: 1px solid #eee; js edit remove */
 		opacity: 0;
 		padding-left: 0;
 		position: absolute;
@@ -1533,8 +1579,8 @@ p.entry-meta {
 	}
 
 	.genesis-nav-menu .sub-menu a {
-		border: 1px solid #eee;
-		border-top: 0;
+		/*border: 1px solid #eee; js edit remove
+		border-top: 0;*/
 		padding-bottom: 15px;
 		padding-top: 15px;
 	}

@@ -23,6 +23,7 @@ function gc_twenty_custom_gutenberg_css() {
 	color: {$appearance['link-color']};
 }
 
+/* js edit - remove gutenberg-specific button styling (we want them all the same)
 .site-container .wp-block-button .wp-block-button__link {
 	background-color: {$appearance['link-color']};
 }
@@ -40,7 +41,7 @@ function gc_twenty_custom_gutenberg_css() {
 .site-container .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .site-container .wp-block-button.is-style-outline .wp-block-button__link:hover {
 	color: {$appearance['button-outline-hover']};
-}
+} */
 CSS;
 
 	$css .= gc_twenty_inline_font_sizes();
@@ -69,6 +70,7 @@ function gc_twenty_custom_gutenberg_admin_css() {
 	color: {$appearance['link-color']};
 }
 
+/* js edit - remove gutenberg-specific button styling
 .editor-styles-wrapper .editor-rich-text .button,
 .editor-styles-wrapper .wp-block-button .wp-block-button__link:not(.has-background) {
 	background-color: {$appearance['button-bg']};
@@ -82,7 +84,7 @@ function gc_twenty_custom_gutenberg_admin_css() {
 .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:hover {
 	color: {$appearance['button-outline-hover']};
-}
+} */
 CSS;
 
 	$css .= gc_twenty_editor_inline_color_palette();
@@ -134,6 +136,7 @@ function gc_twenty_inline_color_palette() {
 
 	foreach ( $editor_color_palette as $color_info ) {
 		$css .= <<<CSS
+		/* js edit - remove gutenberg-specific button styling 
 		.site-container .has-{$color_info['slug']}-color,
 		.site-container .wp-block-button .wp-block-button__link.has-{$color_info['slug']}-color,
 		.site-container .wp-block-button.is-style-outline .wp-block-button__link.has-{$color_info['slug']}-color {
@@ -144,7 +147,7 @@ function gc_twenty_inline_color_palette() {
 		.site-container .wp-block-button .wp-block-button__link.has-{$color_info['slug']}-background-color,
 		.site-container .wp-block-pullquote.is-style-solid-color.has-{$color_info['slug']}-background-color {
 			background-color: {$color_info['color']};
-		}
+		} */
 CSS;
 	}
 

@@ -205,3 +205,17 @@ add_filter('excerpt_more','sp_read_more_link');	// this is from the gc-ea theme
 function sp_read_more_link() {
 	return '<p><a class="more-link" href="' . get_permalink() . '">Continue Reading</a></p>';
 }
+
+//* js edit - full width content actually full width on homepage
+add_action('genesis_after_header','gc_twenty_full_width_before', 0);
+function gc_twenty_full_width_before() {
+	if(is_front_page()) {
+		echo '<div class="gc-twenty-front-page">';
+	}
+}
+add_action('genesis_before_footer','gc_twenty_full_width_after', 0);
+function gc_twenty_full_width_after() {
+	if(is_front_page()) {
+		echo '</div>';
+	}
+}

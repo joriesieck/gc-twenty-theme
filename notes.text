@@ -17,5 +17,24 @@ Other Miscellaneous:
 ###############################################################################
 
 Edits from GC Sixteen:
+Stylesheet:
 add variables for colors
-change header background color, header link colors, header link hover colors
+site - background color, text color
+header - link color, background color, hover color, submenu colors, margin-bottom
+footer widgets - background color, font colors (inc links)
+site footer - background color, font colors (inc links)
+links - color, text decoration
+entry - add white 'floating' box, entry content and title padding
+buttons - background color
+front page content - change width
+
+functions.php:
+add class to front page content to fix width
+
+other files:
+gutenberg/inline-styles.php - remove gutenberg-specific button styling
+gutenberg/style-editor.css - remove gutenberg-specific button styling
+gutenberg/front-end.css - remove gutenberg-specific button styling
+
+Customizer:
+add logo to header - set max-width to 220px
