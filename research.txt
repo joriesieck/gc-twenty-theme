@@ -17,23 +17,106 @@ Genesis Sample Fonts/Sizing:
 -- 600: entry content h3 & h4, buttons, th, archive title, author box title, widget titles, captions, wpforms field labels, site title, archive pagination links, menu-highlight
 -- 400: body (default)
 -- 300: wpforms field sublabels
+GC Sixteen Fonts/Sizing:
+- Font: 'PT Sans', sans-serif -> this is the only font used in this theme
+- Sizing: - default is set to 62.5%, which is the "10px browser default"
+-- 50px/5rem: left-small h4, right-small h4
+-- 44px/4.4rem: image-section h2 & h4, solid-section h2 & h4, welcome widget title, h4 for slider wide & slider & home feature top & home features 4-9 & home feature 14
+-- 36px/3.6rem: h1, archive title, entry title, featured page entry title, flexible widgets halves & thirds & fourths h2
+-- 34px: front-page-3 h4, front-page-1 image-section h2 & h4 (media <=550px), image-section h4 & solid-section h4 (media <=550px)
+-- 32px: site title, home feature 9 h4
+-- 30px/3.0rem: h2, h3
+-- 28px: shrink site title
+-- 26px: front-page-4 h4, front-page-5 h4
+-- 24px: #field_3_1.gfield label, home feature 1 widget title, home feature 2 widget title, h4 for home feature 3 & home features 10-13, left content h3, right content h3, white-bg h3, trans-bg h3
+-- 20px/2.0rem: body, h4, author box title, after entry h3
+-- 18px/1.8rem: h5, input text, large buttons, circle, archive description, author box, featured content entry titles, gf buttons (1.125rem), footer widgets
+-- 16px/1.6rem: h6, gform_footer buttons, medium buttons, gf inputs, gf labels, #field_3_1.gfield description, #gform_wrapper_3 submit button, archive pagination links, sidebar, site footer, body (media <=800px)
+-- 15px/1.5rem: sidebar widget titles, sidebar h4, footer widget titles, enews input, home-feature-bg featured page & post h2, home-feature-bg-dark featured page & post h2, small
+-- 14px/1.4rem: button default, captions, entry by, form allowed tags (.875rem), tiny, tiny2
+-- 13px: genesis nav menu links
+-- 12px: genesis nav submenu links, secondary nav menu links, entry meta, entry categories, entry tags, site footer p
+-- 11px: byline for home-feature-bg & home-feature-bg-dark & home-feature-bg-alt
+-- 1em: screen reader focus text, genesis nav menu search input, widget search input
+- Weight:
+-- 800: genesis nav menu highlight links
+-- 700: captions, home feature 1 links, home feature 2 links, home-feature-1 links
+-- 600: entry meta, b, strong, footer widgets links, site footer links
+-- 400: body
+-- 300: input text, medium buttons, large buttons, site title, genesis nav menu links, welcome widget title, welcome h4, h4 for slider wide & slider & home feature top & home features 4-9 & home feature 14, entry by, placeholders, color boxes, th, gf confirmation, home-feature-bg-dark h5
+-- bold: screen reader focus text, genesis nav menu search input, widget search input, checkbox
+
 
 ########################################################################################################################################################
 Figure out blocks and atomic blocks – read docs, search google for other info, and test out
 		◦ https://atomicblocks.com/
 		◦ Are ab columns better than standard wp columns? Why, if so?
+		-- WP Columns features:
+		--- different width columns (set %)
+		--- max 6 columns, min 2
+		--- containing block can be wide or full width
+		--- 'auto width' doesnt readjust for img sizes
+		--- imgs can bleed over
+		--- set vertical align w/i column, horizontal has to be by component tho
+		--- set color for all, not ind.
+		-- AB Columns features:
+		--- different width columns (have to choose either 1st or last bigger)
+		--- max 6 columns, min 1
+		--- can be align center, wide width, or full width
+		--- set spacing btw columns
+		--- responsive - changes on mobile
+		--- set margin/padding/color/bg img for all or individually
+		--- set vertical/horizontal align w/i column
+		-- overall - it seems like AB columns have way more customizability built into the editor, so that's nice if you dont want to do a lot of styling in the theme files
+
 		◦ What are post grid and container blocks – use cases for them? How do they help? Should we consider using one of them for our home page?
+		- post grid blocks are basically an archive block - they let you display a bunch of posts in whatever grid or list organization you want
+		-- options:
+		--- width: regular, wide, full
+		--- display: grid, list
+		--- content type (post or page - doesn't seem to support cpts)
+		--- order by: date (asc or desc), alpha (asc or desc)
+		--- category
+		--- number of items (1-100)
+		--- no. items to offset (0-20) -> this is basically where to start in the list of posts. eg, with orderby oldest to newest the first post displayed is the oldest, but with an added offset of 1 it will be the 2nd oldest, etc
+		--- no. columns (1-4)
+		--- display settings: section title, featured image, image size (thumbnail-full size + ab grid square & ab landscape), title, author, date, excerpt, excerpt length (0-150), more link, more link text
+		--- markup: post grid section tag can be changed from section to div, header, article, main, aside, or footer, post title heading can be h2-h6
+		-- this doesn't make sense for our homepage, but might be nice for more customization on the archive pages
+		- container blocks seem very similar to block areas or 'group' blocks, but with more customization options
+		-- options:
+		--- container width: regular, wide, full
+		--- padding top, bottom, left, right (as %)
+		--- margin top, bottom (as %)
+		--- inside container max width (in px)
+		--- background image/color
+		-- these seem like they'd be helpful for organizing the front page, since a lot of the styling for those widgets that's currently being done in the theme could just be done in the editor
+
 		◦ Can we hide blocks not in use (e.g. hide standard columns if using ab columns)
+		- yep! allowed_block_types hook or block manager in editor
 		◦ How to style standard wp and ab blocks (or, is it all done “in line”)?
+		- ab blocks has a lot of editor-side styling, otherwise have to access block classes in code
 
 ########################################################################################################################################################
 How to make simple custom blocks, if needed -> replace epik boxes and buttons
 		◦ Pin down what boxes and buttons we need; colors and styles to match the site
-
+		- buttons:
+		-- large dark-blue: learn more on fp
+		-- small dark-blue: link to category pages in sidebar, gform submit
+		-- medium green: sponge link in learning skills sidebar
+		-- formkit submit (inline styling makes it inbetween medium and small dark-blue)
+		- boxes:
+		-- light gray (#eee with #ccc border and #333 text) category boxes (epik - 'quote-gray')
+		-- dark gray (#303236 with #105c93 border, #fff h2, and #9dcb2a h4) sponge box (epik - 'quote-charcoal')
+		-- clear (#fff with #ddd border, #444 h5, and #888 text) 'get in touch' box (on About page) (epik - quote)
+		-- off-black (#2a2a2a with #fff title and #aaa text) 'gc updates' gf box (contact sidebar)
 ########################################################################################################################################################
 Use of featured image setting (in page or post editor)
+-- nice for blocks (AB grid, etc)
 		◦ Also, what’s future of featured image in Gutenberg world?
+		-- not going away, i don't think
 		◦ Post images – can do medium, left-aligned for full screen. Then, full width for phone-size?
+		- yup! easy css fix
 
 ########################################################################################################################################################
 Can “after post” section be category dependent (like genesis sidebars?)
