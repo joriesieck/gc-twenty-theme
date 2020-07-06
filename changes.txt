@@ -32,11 +32,13 @@ author box - background color
 comments - background color, padding, border radius, children border
 author page - archive description, heading
 remove bottom margin from last children
+change featured image layout on screens bigger than phone
 
 functions.php:
 add class to front page content to fix width
 add 'after-post' widget from epik
 remove description on 2nd+ page for paginated archives
+add category-specific after post widget
 
 other files:
 gutenberg/inline-styles.php - remove gutenberg-specific button styling

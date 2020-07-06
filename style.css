@@ -172,14 +172,6 @@ body {
 	--off-black-1: #2a2a2a; /* gf contant box background */
 }
 
-@media only screen and (min-width: 551px) {
-	.singular-image.entry-image {
-		max-width: 50%;
-		margin: 0 24px 24px 0;
-		float: left;
-	}
-}
-
 /* Typographical Elements
 --------------------------------------------- */
 
@@ -1580,6 +1572,14 @@ p.entry-meta {
 
 /* Media Queries
 ---------------------------------------------------------------------------- */
+/* js edit change featured image layout on non-mobile screens */
+@media only screen and (min-width: 551px) {
+	.singular-image.entry-image {
+		max-width: 50%;
+		margin: 0 24px 24px 0;
+		float: left;
+	}
+}
 
 @media only screen and (min-width: 480px) {
 

@@ -226,13 +226,34 @@ genesis_register_sidebar(array(
 	'name' => __('After Post', 'gc-twenty'),
 	'description' => __('This is the after post section', 'gc-twenty')
 ));
+// add_action('genesis_after_entry_content','gc_twenty_after_post');
+// function gc_twenty_after_post() {
+// 	if(is_singular('post')) {
+// 		genesis_widget_area('after-post',array(
+// 			'before' => '<div class="after-post widget-area">',
+// 			'after' => '</div>'
+// 		));
+// 	}
+// }
+//* js edit - add category-specific after post
+genesis_register_sidebar(array(
+	'id' => 'cult-after-post',
+	'name' => __('Culture After Post', 'gc-twenty'),
+	'description' => __('This is the after post section for the Culture & Communication category', 'gc-twenty')
+));
 add_action('genesis_after_entry_content','gc_twenty_after_post');
 function gc_twenty_after_post() {
 	if(is_singular('post')) {
 		genesis_widget_area('after-post',array(
-			'before' => '<div class="after-post" widget-area>',
+			'before' => '<div class="after-post widget-area">',
 			'after' => '</div>'
 		));
+		if(has_category('culture')) {
+			genesis_widget_area('cult-after-post',array(
+				'before' => '<div class="after-post cult-after-post widget-area">',
+				'after' => '</div>'
+			));
+		}
 	}
 }
 

@@ -121,19 +121,39 @@ Use of featured image setting (in page or post editor)
 ########################################################################################################################################################
 Can “after post” section be category dependent (like genesis sidebars?)
 		◦ E.g. have a “learning skills after post”
-
+-- yep! code in functions.php
 ########################################################################################################################################################
 Read through the genesis AMP docs (plus yoast below) – prep to talk over recommendations again
 		◦ https://yoast.com/weekly-seo-recap-41/
 		◦ https://yoast.com/3-seo-quick-wins/
 		◦ https://yoast.com/setting-up-wordpress-for-amp-accelerated-mobile-pages/
 
+		AMP notes:
+		- genesis sample has amp-compatibility built into it -> main thing is menus use AMP stuff instead of JS, plus they have an amp-specific stylesheet
+		- from yoast: "Since July 2019, Google determines rankings based on the quality of the mobile version of a site instead of your desktop version" (so amp-compatibility gives us a higher rating overall, not just on mobile)
+		- yoast integrates automatically with the wp amp plugin
+
+		things we would have to remove/figure out alternatives for:
+		- analytics -> google has an amp-friendly analytics tool
+		- quick redirects -> redirection plugin
+		- simple share buttons adder -> simple social icons
+		- the signup thing -> wp forms could be a replacement for this
+
 ########################################################################################################################################################
 Plugins
 		◦ I’ve read that Smush is pretty worthless for optimizing images. What’s a better alternative, if so?
+		- EWWW - reduced most images by 3-10%
+		- reSmush.it - same as above, less information in output
+		- Compress JPEG & PNG images - 500 free uploads/month, bulk compression costs $
 
 ########################################################################################################################################################
 Author pages vs about pages – make one for key gc members?
 		◦ E.g. check out the yoast approach (overkill for us, but food for thought):
 				▪ https://yoast.com/about-us/team/michiel-heijmans/
 				▪ https://yoast.com/ux-button-design/ (scroll over post author name)
+
+				the yoast approach seems pretty similar to what we have now, except it's all on one page instead of split across 2 pages with links. that makes me think that leaving our current set up as-is makes sense
+				hoboken girl (which is just a blog) only does author pages
+				erikson doesnt have an author page, only an about page - but it seems like he's the only blog post author so
+				zach (jsforwp) also doesnt do author pages, but also seems like the sole author
+				it seems pretty common to do author pages in addition to an 'about the founders' page
