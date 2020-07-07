@@ -33,12 +33,14 @@ comments - background color, padding, border radius, children border
 author page - archive description, heading
 remove bottom margin from last children
 change featured image layout on screens bigger than phone
+font - family, size, weight
 
 functions.php:
 add class to front page content to fix width
 add 'after-post' widget from epik
 remove description on 2nd+ page for paginated archives
 add category-specific after post widget
+change featured image size to medium instead of genesis-singular-images
 
 other files:
 gutenberg/inline-styles.php - remove gutenberg-specific button styling
@@ -50,3 +52,4 @@ add logo to header - set max-width to 220px
 change entry meta to "by [post_author_posts_link] [post_comments] [post_edit] updated [post_modified_date]"
 this isn't the customizer but enabling profile settings (title, description) for the author pages
 archive - set content to 'entry excerpts'
+archive - enable 'display featured image', set size to thumbnail

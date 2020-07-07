@@ -180,11 +180,12 @@ html {
 	-webkit-font-smoothing: antialiased;
 }
 
+/* js edit - change site background, body text, font family & size */
 body {
-	background-color: var(--super-light-gray);	/* js edit change site background */
-	color: var(--medium-dark-gray);	/* js edit change body text */
-	font-family: "Source Sans Pro", sans-serif;
-	font-size: 18px;
+	background-color: var(--super-light-gray);	/* js edit */
+	color: var(--medium-dark-gray);	/* js edit */
+	font-family: "PT Sans", sans-serif;	/* js edit */
+	font-size: 20px;	/* js edit */
 	font-weight: 400;
 	line-height: 1.625;
 	margin: 0;
@@ -271,50 +272,51 @@ blockquote {
 
 /* Headings
 --------------------------------------------- */
-
+/* js edit change font sizes and weights */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	font-family: "Source Sans Pro", sans-serif;
-	font-weight: 400;
+	/* font-family: "Source Sans Pro", sans-serif;
+	font-weight: 400; js edit remove extraneous styling */
 	line-height: 1.2;
 	margin: 0 0 20px;
-}
-
-h1 {
-	font-size: 30px;
-}
-
-h2 {
-	font-size: 27px;
-}
-
-h3 {
-	font-size: 24px;
-}
-
-h4 {
-	font-size: 20px;
-}
-
-.entry-content h3,
-.entry-content h4 {
 	font-weight: 600;
 }
 
-.entry-content h4 {
-	margin-top: 40px;
+h1 {
+	font-size: 36px;
 }
 
+h2 {
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 27px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+/* .entry-content h3,
+.entry-content h4 {
+	font-weight: 600;
+} */
+
+/* .entry-content h4 {
+	margin-top: 40px;
+} */
+
 h5 {
-	font-size: 18px;
+	font-size: 21px;
 }
 
 h6 {
-	font-size: 16px;
+	font-size: 18px;
 }
 
 /* Objects
@@ -606,34 +608,7 @@ th {
 /* Structure and Layout
 ---------------------------------------------------------------------------- */
 
-/* Site Container
---------------------------------------------- */
 
-.site-container {
-	animation: fadein 1s;
-	word-wrap: break-word;
-}
-
-@keyframes fadein {
-
-	from {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
-	}
-
-}
-
-/* Site Inner
---------------------------------------------- */
-
-.site-inner {
-	clear: both;
-	margin: 0 auto;
-	padding: 0 30px;	/* js edit - remove excess padding - was 60px 30px 0 */
-}
 
 
 /* Common Classes
@@ -727,13 +702,13 @@ th {
 .archive-description .entry-title,
 .archive-title,
 .author-box-title {
-	font-size: 20px;
-	font-weight: 600;
+	/* font-size: 20px;
+	font-weight: 600; js edit remove extraneous styling */
 	margin-bottom: 10px;
 }
 
 .entry-title {
-	font-size: 30px;
+	/* font-size: 30px; js edit remove extraneous styling */
 	margin-bottom: 0; /* js edit fix entry title margin */
 	padding: 20px 20px 0;	/* js edit fix entry title padding */
 }
@@ -1146,11 +1121,14 @@ figcaption,
 
 /* js edit change submenu colors */
 .genesis-nav-menu .sub-menu a {
-	background-color: var(--super-dark-gray);	/* js edit */
 	color: var(--white);	/* js edit addition */
 	font-size: 14px;
 	position: relative;
 	word-wrap: break-word;
+}
+
+.genesis-nav-menu.sf-js-enabled .sub-menu a {
+		background-color: var(--super-dark-gray);	/* js edit */
 }
 
 .genesis-nav-menu .menu-item:focus,
@@ -1196,7 +1174,7 @@ figcaption,
 .sub-menu-toggle {
 	background-color: transparent;
 	border-width: 0;
-	color: var(--dark-gray-2);
+	color: var(--white);	/* js edit make menu toggle white */
 	display: block;
 	margin: 0 auto;
 	overflow: hidden;
@@ -1210,7 +1188,6 @@ figcaption,
 .sub-menu-toggle:hover {
 	background-color: transparent;
 	border-width: 0;
-	color: var(--blue);
 }
 
 .menu-toggle {
@@ -1233,6 +1210,10 @@ figcaption,
 	position: relative;
 	text-rendering: auto;
 	top: 1px;
+}
+/* js edit remove bg color for sub menu */
+.sub-menu a {
+	background-color: var(--dark-blue);
 }
 
 .sub-menu-toggle {
@@ -1353,7 +1334,8 @@ figcaption,
 --------------------------------------------- */
 /* js edit - fix entry meta styling */
 p.entry-meta {
-	font-size: 16px;
+	font-size: 12px;	/* js edit */
+	font-weight: 600; /* js edit - add */
 	margin-bottom: 0;
 	text-transform: uppercase;	/* js edit */
 }
@@ -1553,7 +1535,8 @@ p.entry-meta {
 .site-footer {
 	background-color: var(--off-black);	/* js edit */
 	/*border-top: 1px solid #eee; js edit remove */
-	font-size: 15px;
+	font-size: 12px; /* js edit */
+	font-weight: 600;	/* js edit - add */
 	line-height: 1.5;
 	padding: 30px;
 	text-align: center;
@@ -1572,12 +1555,19 @@ p.entry-meta {
 
 /* Media Queries
 ---------------------------------------------------------------------------- */
+/* js edit add mobile styling */
 /* js edit change featured image layout on non-mobile screens */
 @media only screen and (min-width: 551px) {
 	.singular-image.entry-image {
 		max-width: 50%;
 		margin: 0 24px 24px 0;
 		float: left;
+	}
+}
+/* js edit center featured image on mobile */
+@media only screen and (max-width: 550px) {
+	.singular-image.entry-image {
+		text-align: center;
 	}
 }
 
@@ -1589,8 +1579,41 @@ p.entry-meta {
 	}
 
 }
+/* remove 'floating' border on mobile */
+@media only screen and (max-width: 960px) {
+	.entry {
+		border: none;
+		box-shadow: none;
+		margin: 0 0 40px;
+	}
+	.author-box, .screen-reader-text, .entry-comments, .comment-respond, .sidebar-primary {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+}
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 961px) {
+	/* Site Container
+	--------------------------------------------- */
+
+	.site-container {
+		animation: fadein 1s;
+		word-wrap: break-word;
+	}
+
+	@keyframes fadein {
+
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+
+	}
+
+	/* js edit - move content width etc styling here */
 
 	/* Site Header
 	--------------------------------------------- */
@@ -1607,7 +1630,7 @@ p.entry-meta {
 	}
 
 	/* Genesis Menu
-	--------------------------------------------- */
+	---------------------------------------------*/
 
 	.genesis-nav-menu .menu-item {
 		display: inline-block;
@@ -1641,7 +1664,7 @@ p.entry-meta {
 	.genesis-nav-menu .sub-menu a {
 		width: 180px;
 	}
-/* js edit remove border from submenu */
+	/* js edit remove border from submenu */
 	.genesis-nav-menu .sub-menu {
 		/*border-top: 1px solid #eee; js edit remove */
 		opacity: 0;
@@ -1651,8 +1674,8 @@ p.entry-meta {
 	}
 
 	.genesis-nav-menu .sub-menu a {
-		/*border: 1px solid #eee; js edit remove
-		border-top: 0;*/
+		/*border: 1px solid #eee; js edit remove */
+		border-top: 0;
 		padding-bottom: 15px;
 		padding-top: 15px;
 	}
@@ -1677,7 +1700,6 @@ p.entry-meta {
 
 	/* Header Menu
 	--------------------------------------------- */
-
 	.nav-primary {
 		clear: none;
 		float: right;
@@ -1689,10 +1711,13 @@ p.entry-meta {
 		padding-right: 15px;
 	}
 
-	/* Site-Inner
+	/* Site Inner
 	--------------------------------------------- */
 
 	.site-inner {
+		clear: both;
+		margin: 0 auto;
+		padding: 0;	/* js edit - remove excess padding - was 60px 30px 0 */
 		max-width: 1140px;
 	}
 
@@ -1701,7 +1726,8 @@ p.entry-meta {
 
 	.content {
 		float: left;
-		width: 65%;
+		width: 65%;	/* approx 740 / 1140 * 100% */
+		margin-right: 1.75%;	/* approx. 20 / 1140 * 100% */
 	}
 
 	.sidebar-content .content {
@@ -1719,7 +1745,8 @@ p.entry-meta {
 
 	.sidebar {
 		float: right;
-		width: 30%;
+		width: 31.5%; /* approx 360 / 1140 * 100% */
+		margin-left: 1.75%;	/* approx. 20 / 1140 * 100% */
 	}
 
 	.sidebar-content .sidebar {
@@ -1838,7 +1865,6 @@ p.entry-meta {
 		margin-bottom: 0;
 		width: calc(100% / 3);
 	}
-
 }
 
 /* Print Styles
@@ -2052,4 +2078,174 @@ p.entry-meta {
 	background-color: #f0f0f0;
 	border: none;
 	line-height: 25px;
+}
+
+/* js edit - font tests
+--------------------------------------------------------------------------*/
+/* genesis sample defaults */
+.my-gen-sample h4 {
+	margin-top: 0px;
+}
+.my-gen-sample .my-menu {
+	font-size: 15px;
+}
+.my-gen-sample .my-entry-meta {
+	font-size: 16px;
+}
+.my-gen-sample .my-footer {
+	font-size: 15px;
+}
+
+/* gc sixteen */
+.my-gc-sixteen h1, .my-gc-sixteen h2, .my-gc-sixteen h3, .my-gc-sixteen h4, .my-gc-sixteen h5, .my-gc-sixteen h6, .my-gc-sixteen p, .my-gc-sixteen {
+	font-family: "PT Sans";
+	font-size: 20px;
+}
+.my-gc-sixteen h1, .my-gc-sixteen {
+	font-size: 36px;
+}
+.my-gc-sixteen h2 {
+	font-size: 30px;
+}
+.my-gc-sixteen h3 {
+	font-size: 30px;
+	font-weight: 400;	/* default for the theme is 600 */
+}
+.my-gc-sixteen h4 {
+	font-size: 20px;
+	font-weight: 400;	/* default for the theme is 600 */
+	margin-top: 0px;
+}
+.my-gc-sixteen h5 {
+	font-size: 18px;
+}
+.my-gc-sixteen h6 {
+	font-size: 16px;
+}
+.my-gc-sixteen .my-menu {
+	font-size: 13px;
+	font-weight: 300;
+}
+.my-gc-sixteen .my-entry-meta {
+	font-size: 12px;
+	font-weight: 600;
+}
+.my-gc-sixteen .my-footer {
+	font-size: 12px;
+	font-weight: 600;
+}
+
+/* erikson */
+.my-erikson h1, .my-erikson h2, .my-erikson h3, .my-erikson h4, .my-erikson h5, .my-erikson h6, .my-erikson p, .my-erikson {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	font-size: 18px;
+}
+.my-erikson h1, .my-erikson {
+	font-size: 50px;
+	font-weight: 700;
+}
+.my-erikson h2 {
+	font-size: 38px;
+	font-weight: 700;
+}
+.my-erikson h3 {
+	font-size: 32px;
+	font-weight: 700;
+}
+.my-erikson h4 {
+	font-size: 26px;
+	font-weight: 700;
+	margin-top: 0px;
+}
+.my-erikson h5 {
+	font-size: 22px;
+	font-weight: 700;
+}
+.my-erikson h6 {
+	font-size: 16px;
+	font-weight: 700;
+}
+.my-erikson .my-menu {
+	font-size: 18px;
+}
+.my-erikson .my-entry-meta {
+	font-size: 14px;
+}
+.my-erikson .my-footer {
+	font-size: 12px;
+}
+
+/* learndash */
+.my-learndash h1, .my-learndash h2, .my-learndash h3, .my-learndash h4, .my-learndash h5, .my-learndash h6, .my-learndash p, .my-learndash {
+	font-family: "greycliff_cfregular",Helvetica,Arial,sans-serif;
+	font-size: 18px;
+}
+.my-learndash h1, .my-learndash {
+	font-size: 40px;
+}
+.my-learndash h2 {
+	font-size: 30px;
+}
+.my-learndash h3 {
+	font-size: 28px;
+	font-weight: 400;	/* default for the theme is 600 */
+}
+.my-learndash h4 {
+	font-size: 26px;
+	font-weight: 400;	/* default for the theme is 600 */
+	margin-top: 0px;
+}
+.my-learndash h5 {
+	font-size: 24px;
+}
+.my-learndash h6 {
+	font-size: 12px;
+}
+.my-learndash .my-menu {
+	font-size: 22px;
+}
+.my-learndash .my-entry-meta {
+	font-size: 18px;
+}
+.my-learndash .my-footer {
+	font-size: 18px;
+}
+
+/* blackrock */
+.my-blackrock h1, .my-blackrock h2, .my-blackrock h3, .my-blackrock h4, .my-blackrock h5, .my-blackrock h6, .my-blackrock p, .my-blackrock {
+	font-family: "FortBold",Arial,sans-serif;
+	font-weight: 600;
+	font-size: 16px;
+}
+.my-blackrock h1, .my-blackrock {
+	/* font-family: "FortExtraBold"; */
+	font-size: 56px;
+	font-weight: 800;
+}
+.my-blackrock h2 {
+	/* font-family: "FortExtraBold"; */
+	font-size: 40px;
+	font-weight: 800;
+}
+.my-blackrock h3 {
+	font-size: 32px;
+}
+.my-blackrock h4 {
+	font-size: 32px;
+	margin-top: 0px;
+}
+.my-blackrock .my-menu {
+	/* font-family: "FortBook"; */
+	font-size: 16px;
+	font-weight: 400;
+}
+.my-blackrock .my-entry-meta {
+	/* font-family: "FortExtraBold"; */
+	font-size: 12px;
+	font-weight: 800;
+}
+.my-blackrock .my-footer {
+	/* font-family: "FortBook"; */
+	font-size: 14px;
+	font-weight: 400;
 }
