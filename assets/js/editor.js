@@ -2,8 +2,8 @@
 wp.domReady(() => {
 	wp.blocks.registerBlockStyle('gccustom/quote-box',[
 		{
-			name: 'white',
-			label: 'White',
+			name: 'default',
+			label: 'Default',
 			isDefault: true,
 		},
 		{
@@ -13,13 +13,13 @@ wp.domReady(() => {
 	]);
 	wp.blocks.registerBlockStyle('gccustom/fancy-quote-box',[
 		{
-			name: 'blue',
-			label: 'Blue',
+			name: 'default',
+			label: 'Default',
 			isDefault: true,
 		},
 		{
-			name: 'red',
-			label: 'Red',
+			name: 'alert',
+			label: 'Alert',
 		}
 	]);
 });

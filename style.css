@@ -170,6 +170,9 @@ body {
 	--green: #9dcb2a; /* sponge box text */
 	--gray-1: #888; /* 'get in touch' box text */
 	--off-black-1: #2a2a2a; /* gf contant box background */
+	--light-blue: #a6bbd8;	/* fancy quote box bg */
+	--red: #c8001c;	/* alert box text and border */
+	--light-red: #f2dbdb;	/* alert box bg */
 }
 
 /* Typographical Elements
@@ -2087,174 +2090,69 @@ p.entry-meta {
 	line-height: 25px;
 }
 
-/* js edit - font tests
+/* js edit - boxes/custom blocks
 --------------------------------------------------------------------------*/
-/* genesis sample defaults */
-.my-gen-sample h4 {
-	margin-top: 0px;
-}
-.my-gen-sample .my-menu {
-	font-size: 15px;
-}
-.my-gen-sample .my-entry-meta {
-	font-size: 16px;
-}
-.my-gen-sample .my-footer {
-	font-size: 15px;
+/* blockquote */
+/* add quote mark */
+.wp-block-quote::before {
+	content: "\f122";
+	font-family: dashicons;
+	color: var(--dark-blue);
+	margin-right: 5px;
 }
 
-/* gc sixteen */
-.my-gc-sixteen h1, .my-gc-sixteen h2, .my-gc-sixteen h3, .my-gc-sixteen h4, .my-gc-sixteen h5, .my-gc-sixteen h6, .my-gc-sixteen p, .my-gc-sixteen {
-	font-family: "PT Sans";
-	font-size: 20px;
+.wp-block-quote div {
+	margin-left: 5px;
 }
-.my-gc-sixteen h1, .my-gc-sixteen {
-	font-size: 36px;
+
+.wp-block-quote {
+	text-align: left;
+	margin-left: 0 !important;
+	display: flex;
+	flex-direction: row;
 }
-.my-gc-sixteen h2 {
-	font-size: 30px;
+
+
+/* quote box */
+/* white (default) */
+.entry-content .wp-block-gccustom-quote-box,
+.wp-block-gccustom-quote-box {
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  padding: 20px;
+	margin: 40px;
 }
-.my-gc-sixteen h3 {
-	font-size: 30px;
-	font-weight: 400;	/* default for the theme is 600 */
+/* gray */
+.entry-content .wp-block-gccustom-quote-box.is-style-gray,
+.wp-block-gccustom-quote-box.is-style-gray {
+  background: var(--off-gray);
+  border: 1px solid var(--light-gray);
+  padding: 20px;
+	margin: 40px;
 }
-.my-gc-sixteen h4 {
-	font-size: 20px;
-	font-weight: 400;	/* default for the theme is 600 */
-	margin-top: 0px;
-}
-.my-gc-sixteen h5 {
-	font-size: 18px;
-}
-.my-gc-sixteen h6 {
-	font-size: 16px;
-}
-.my-gc-sixteen .my-menu {
-	font-size: 13px;
-	font-weight: 300;
-}
-.my-gc-sixteen .my-entry-meta {
-	font-size: 12px;
+
+/* fancy quote box */
+.wp-block-gccustom-fancy-quote-box .title {
+	text-transform: uppercase;
 	font-weight: 600;
+	margin-bottom: 0;
 }
-.my-gc-sixteen .my-footer {
-	font-size: 12px;
-	font-weight: 600;
+/* blue (default) */
+.entry-content .wp-block-gccustom-fancy-quote-box,
+.wp-block-gccustom-fancy-quote-box {
+  background: var(--light-blue);
+  border-left: 5px solid var(--dark-blue);
+  padding: 2% 2.5%;
+	margin-bottom: 30px;
 }
-
-/* erikson */
-.my-erikson h1, .my-erikson h2, .my-erikson h3, .my-erikson h4, .my-erikson h5, .my-erikson h6, .my-erikson p, .my-erikson {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-	font-size: 18px;
-}
-.my-erikson h1, .my-erikson {
-	font-size: 50px;
-	font-weight: 700;
-}
-.my-erikson h2 {
-	font-size: 38px;
-	font-weight: 700;
-}
-.my-erikson h3 {
-	font-size: 32px;
-	font-weight: 700;
-}
-.my-erikson h4 {
-	font-size: 26px;
-	font-weight: 700;
-	margin-top: 0px;
-}
-.my-erikson h5 {
-	font-size: 22px;
-	font-weight: 700;
-}
-.my-erikson h6 {
-	font-size: 16px;
-	font-weight: 700;
-}
-.my-erikson .my-menu {
-	font-size: 18px;
-}
-.my-erikson .my-entry-meta {
-	font-size: 14px;
-}
-.my-erikson .my-footer {
-	font-size: 12px;
+/* red (alert) */
+.entry-content .wp-block-gccustom-fancy-quote-box.is-style-alert,
+.wp-block-gccustom-fancy-quote-box.is-style-alert {
+  background: var(--light-red);
+  border-left: 5px solid var(--red);
+	color: var(--red);
+  padding: 2% 2.5%;
+	margin-bottom: 30px;
 }
 
-/* learndash */
-.my-learndash h1, .my-learndash h2, .my-learndash h3, .my-learndash h4, .my-learndash h5, .my-learndash h6, .my-learndash p, .my-learndash {
-	font-family: "greycliff_cfregular",Helvetica,Arial,sans-serif;
-	font-size: 18px;
-}
-.my-learndash h1, .my-learndash {
-	font-size: 40px;
-}
-.my-learndash h2 {
-	font-size: 30px;
-}
-.my-learndash h3 {
-	font-size: 28px;
-	font-weight: 400;	/* default for the theme is 600 */
-}
-.my-learndash h4 {
-	font-size: 26px;
-	font-weight: 400;	/* default for the theme is 600 */
-	margin-top: 0px;
-}
-.my-learndash h5 {
-	font-size: 24px;
-}
-.my-learndash h6 {
-	font-size: 12px;
-}
-.my-learndash .my-menu {
-	font-size: 22px;
-}
-.my-learndash .my-entry-meta {
-	font-size: 18px;
-}
-.my-learndash .my-footer {
-	font-size: 18px;
-}
-
-/* blackrock */
-.my-blackrock h1, .my-blackrock h2, .my-blackrock h3, .my-blackrock h4, .my-blackrock h5, .my-blackrock h6, .my-blackrock p, .my-blackrock {
-	font-family: "FortBold",Arial,sans-serif;
-	font-weight: 600;
-	font-size: 16px;
-}
-.my-blackrock h1, .my-blackrock {
-	/* font-family: "FortExtraBold"; */
-	font-size: 56px;
-	font-weight: 800;
-}
-.my-blackrock h2 {
-	/* font-family: "FortExtraBold"; */
-	font-size: 40px;
-	font-weight: 800;
-}
-.my-blackrock h3 {
-	font-size: 32px;
-}
-.my-blackrock h4 {
-	font-size: 32px;
-	margin-top: 0px;
-}
-.my-blackrock .my-menu {
-	/* font-family: "FortBook"; */
-	font-size: 16px;
-	font-weight: 400;
-}
-.my-blackrock .my-entry-meta {
-	/* font-family: "FortExtraBold"; */
-	font-size: 12px;
-	font-weight: 800;
-}
-.my-blackrock .my-footer {
-	/* font-family: "FortBook"; */
-	font-size: 14px;
-	font-weight: 400;
-}
-
-/**
+/* further reading */

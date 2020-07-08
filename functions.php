@@ -332,3 +332,17 @@ function be_gutenberg_scripts() {
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'be_gutenberg_scripts' );
+
+//* modify blockquote markup for easier styling
+add_filter('render_block','gc_block_quote',10,2);
+function gc_block_quote($block_content, $block) {
+	if($block['blockName']==='core/quote') {
+		$original = '<blockquote class="wp-block-quote">';
+		$new = '<blockquote class="wp-block-quote"><div>';
+		$block_content = str_replace($original, $new, $block_content);
+		$original = '</blockquote>';
+		$new = '</div></blockquote>';
+		$block_content = str_replace($original, $new, $block_content);
+	}
+	return $block_content;
+}
