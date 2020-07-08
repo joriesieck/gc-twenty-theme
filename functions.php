@@ -300,7 +300,7 @@ function gc_twenty_archive_description() {
 	}
 }
 
-//* js edit - add fonts for font test
+//* js edit - add font from google api
 wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=PT+Sans:400,700', array(), CHILD_THEME_VERSION );
 
 //* js edit - remove genesis-singular-images, just use medium
@@ -316,3 +316,19 @@ function gc_twenty_do_singular_image() {
 		}
 	}
 }
+
+/**
+ * Gutenberg scripts and styles for custom blocks
+ * @link https://www.billerickson.net/block-styles-in-gutenberg/
+ */
+function be_gutenberg_scripts() {
+
+	wp_enqueue_script(
+		'be-editor',
+		get_stylesheet_directory_uri() . '/assets/js/editor.js',
+		array( 'wp-blocks', 'wp-dom' ),
+		filemtime( get_stylesheet_directory() . '/assets/js/editor.js' ),
+		true
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'be_gutenberg_scripts' );

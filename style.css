@@ -1023,6 +1023,13 @@ figcaption,
 	margin-bottom: 40px;	/* js edit add 'gray bar' under header */
 }
 
+/* js edit - move header & menu inside content wrapper */
+.site-header .wrap {
+	max-width: 1140px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /* Title Area
 --------------------------------------------- */
 
@@ -2249,3 +2256,5 @@ p.entry-meta {
 	font-size: 14px;
 	font-weight: 400;
 }
+
+/**
