@@ -9,6 +9,14 @@ wp.domReady(() => {
 		{
 			name: 'gray',
 			label: 'Gray',
+		},
+		{
+			name: 'no-title',
+			label: 'Default (No Title)',
+		},
+		{
+			name: 'gray-no-title',
+			label: 'Gray (No Title)',
 		}
 	]);
 	wp.blocks.registerBlockStyle('gccustom/fancy-quote-box',[
@@ -20,6 +28,14 @@ wp.domReady(() => {
 		{
 			name: 'alert',
 			label: 'Alert',
+		},
+		{
+			name: 'no-title',
+			label: 'Default (No Title)',
+		},
+		{
+			name: 'alert-no-title',
+			label: 'Alert (No Title)',
 		}
 	]);
 });

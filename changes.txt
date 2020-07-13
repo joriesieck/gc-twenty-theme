@@ -34,6 +34,8 @@ author page - archive description, heading
 remove bottom margin from last children
 change featured image layout on screens bigger than phone
 font - family, size, weight
+custom boxes, support for class-based boxes
+miscellaneous content-specific tweaks
 
 functions.php:
 add class to front page content to fix width
@@ -41,11 +43,16 @@ add 'after-post' widget from epik
 remove description on 2nd+ page for paginated archives
 add category-specific after post widget
 change featured image size to medium instead of genesis-singular-images
+add custom block styling
+modify blockquote markup
+remove fullscreen editor default
+change readmore text
 
 other files:
 gutenberg/inline-styles.php - remove gutenberg-specific button styling
-gutenberg/style-editor.css - remove gutenberg-specific button styling
+gutenberg/style-editor.css - remove gutenberg-specific button styling, add styling to match front end
 gutenberg/front-end.css - remove gutenberg-specific button styling
+assets/js/editor.js - add style options to blocks
 
 Customizer:
 add logo to header - set max-width to 220px
@@ -53,3 +60,10 @@ change entry meta to "by [post_author_posts_link] [post_comments] [post_edit] up
 this isn't the customizer but enabling profile settings (title, description) for the author pages
 archive - set content to 'entry excerpts'
 archive - enable 'display featured image', set size to thumbnail
+footer - [footer_copyright before="Copyright "] · [footer_childtheme_link before="" after=" on"] [footer_genesis_link url="https://www.studiopress.com/" before=""] · [footer_wordpress_link] · [footer_loginout]
+
+content setup:
+front page: each widget has padding left/right 5%
+sya widget: wide width advanced columns, h3 h5 p large-button, margin-top 40px, snd column added margin-top 80px, margin-bottom 60px
+dark-gray widget: full width single advanced column, h1, *column* centered, *text* left-aligned, max-width 1140, background #303236, text white, margin-top 40, margin-bottom 70
+research & practice widget: full width container w max width 1140, h1, 4 advanced columns, link, h5, each part has bottom margin 60, each column has bottom margin 40

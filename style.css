@@ -167,7 +167,8 @@ body {
 	--dark-white: #f5f5f5;	/* enews background, entry content code & sticky background, archive pagination bg */
 	--blue: #0073e5; /* sample uses this for a lot of hovers, i don't like it */
 	--muted-blue: #105c93; /* sponge box border */
-	--green: #9dcb2a; /* sponge box text */
+	--green: #9dcb2a; /* sponge box text, button background */
+	--dark-green: #83a924;	/* sponge box button border */
 	--gray-1: #888; /* 'get in touch' box text */
 	--off-black-1: #2a2a2a; /* gf contant box background */
 	--light-blue: #a6bbd8;	/* fancy quote box bg */
@@ -714,6 +715,11 @@ th {
 	/* font-size: 30px; js edit remove extraneous styling */
 	margin-bottom: 0; /* js edit fix entry title margin */
 	padding: 20px 20px 0;	/* js edit fix entry title padding */
+}
+
+/* js edit */
+.type-page .entry-title {
+	padding: 20px;
 }
 
 .entry-title a,
@@ -2124,11 +2130,18 @@ p.entry-meta {
 }
 /* gray */
 .entry-content .wp-block-gccustom-quote-box.is-style-gray,
-.wp-block-gccustom-quote-box.is-style-gray {
+.wp-block-gccustom-quote-box.is-style-gray,
+.entry-content .wp-block-gccustom-quote-box.is-style-gray-no-title,
+.wp-block-gccustom-quote-box.is-style-gray-no-title {
   background: var(--off-gray);
   border: 1px solid var(--light-gray);
   padding: 20px;
 	margin: 40px;
+}
+/* no title */
+.wp-block-gccustom-quote-box.is-style-no-title .title,
+.wp-block-gccustom-quote-box.is-style-gray-no-title .title {
+	display: none;
 }
 
 /* fancy quote box */
@@ -2147,12 +2160,133 @@ p.entry-meta {
 }
 /* red (alert) */
 .entry-content .wp-block-gccustom-fancy-quote-box.is-style-alert,
-.wp-block-gccustom-fancy-quote-box.is-style-alert {
+.wp-block-gccustom-fancy-quote-box.is-style-alert,
+.entry-content .wp-block-gccustom-fancy-quote-box.is-style-alert-no-title,
+.wp-block-gccustom-fancy-quote-box.is-style-alert-no-title {
   background: var(--light-red);
   border-left: 5px solid var(--red);
 	color: var(--red);
   padding: 2% 2.5%;
 	margin-bottom: 30px;
 }
+/* no title */
+.wp-block-gccustom-fancy-quote-box.is-style-no-title .title,
+.wp-block-gccustom-fancy-quote-box.is-style-alert-no-title .title {
+	display: none;
+}
 
-/* further reading */
+/* js edit add support for class-based boxes */
+.quote {
+	background: #fff;
+	border-radius: 6px;
+	border: 1px solid #ddd;
+	color: #888;
+	padding: 20px 30px;
+}
+
+.quote-gray {
+	background: #eee;
+	border: 1px solid #ccc;
+	color: #333;
+	padding: 20px;
+}
+
+.quote-charcoal {
+	background: #303236;
+	border: 1px solid #105c9e;
+	color: #fff;
+	padding: 20px;
+}
+
+.quote-charcoal h4 {
+	color: #fff;
+}
+
+.centered {
+	text-align: center;
+}
+
+.button.green {
+	background-color: var(--green) !important;
+	border: 1px solid var(--dark-green);
+}
+
+/* js edit - Miscellaneous styling
+------------------------------------------------------------------------------*/
+/* about sidebar */
+#text-39 .quote h2 {
+	color: var(--medium-dark-gray);
+}
+
+/* Blog signup sidebar */
+
+body #gform_wrapper_3 {
+	background:#2A2A2A;
+    padding: 15px 30px 30px;
+
+}
+
+body .gform_wrapper .gform_body .gform_fields  #field_3_1.gfield .gfield_label {
+	text-align: left;
+	color: #fff;
+	font-size: 24px;
+	text-transform: none;
+	letter-spacing: 0.1rem;
+	margin: 0px 0px 1rem;
+}
+
+body .gform_wrapper .gform_body .gform_fields  #field_3_1.gfield .gfield_description {
+	text-align: left;
+	color: #AAA;
+	font-size: 16px;
+	margin: 0px 0px 1rem;
+}
+
+body #field_3_1 {
+	padding-right: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	border-bottom-style: none;
+}
+
+body #field_3_2 {
+	border-bottom-style: none;
+}
+
+body #gform_wrapper_3 .gform_body .gform_fields .gfield input[type=email] {
+	width: 100%;
+	padding: 10px 4px;
+}
+
+body #gform_wrapper_3 .gform_footer {
+	padding: 0px;
+}
+
+body #gform_wrapper_3 .gform_footer input[type=submit] {
+	background: #293F5E;
+	width: 100%;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: .1rem;
+	margin-top:5px;
+/*	border-radius:4px;	*/
+}
+
+/* Box for GF confirmation message */
+/* ws edit -- basic settings from epik site */
+.gf-confirm-box {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background: #d2eac2;
+    color: #689c2a;
+    font-weight: 300;
+    margin: 0 2px 2px;
+    padding: 30px;
+/* ws edits */
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 60%;
+	min-width: 270px;
+}

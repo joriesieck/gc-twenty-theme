@@ -1,7 +1,36 @@
+/* js edit - Variable Declarations
+--------------------------------------------- */
 body {
-	color: #333;
-	font-family: "Source Sans Pro", sans-serif;
-	font-size: 18px;
+	--dark-blue: #293f5e;	/* site header and buttons, author/category page titles */
+	--burgundy: #800020; /* links */
+	--white: #fff; /* backgrounds, nav menu links, footers links */
+	--gray: #aaa;	/* nav menu focus and hover, footer p */
+	--super-dark-gray: #222; /* nav menu dropdown */
+	--dark-gray: #303236; /* dark gray home widget, 3 part footer, nmd hover */
+	--off-black: #1a1a1a;	/* site footer */
+	--light-gray: #ccc;	/* link hover, focus outline */
+	--super-light-gray: #f2f2f2;	/* site background */
+	--medium-dark-gray: #444;	/* body text */
+	--off-gray: #eee;	/* entry meta, hr, gallery img border, disabled background, tables, breadcrumb border, featured content background, faq border*/
+	--dark-gray-1: #ddd; /* comment reply border, odd comments, mark background */
+	--dark-gray-2: #333;	/* mark text, input text, placeholders, screen reader text, entry & widget titles, faq text, focus text, menu toggle text, archive pagination text, nav menu highlight bg, media print text */
+	--light-gray-1: #777; /* disabled text */
+	--light-gray-2: #999; /* gallery img hover border, input focus border, blockquote border */
+	--dark-white: #f5f5f5;	/* enews background, entry content code & sticky background, archive pagination bg */
+	--blue: #0073e5; /* sample uses this for a lot of hovers, i don't like it */
+	--muted-blue: #105c93; /* sponge box border */
+	--green: #9dcb2a; /* sponge box text */
+	--gray-1: #888; /* 'get in touch' box text */
+	--off-black-1: #2a2a2a; /* gf contant box background */
+	--light-blue: #a6bbd8;	/* fancy quote box bg */
+	--red: #c8001c;	/* alert box text and border */
+	--light-red: #f2dbdb;	/* alert box bg */
+}
+
+body {
+	color: var(--medium-dark-gray);	/* js edit */
+	font-family: "PT Sans", sans-serif;	/* js edit */
+	font-size: 20px;	/* js edit */
 	font-weight: 400;
 	line-height: 1.625;
 }
@@ -10,8 +39,21 @@ p,
 ul,
 ol,
 dl {
-	font-size: 18px;
+	font-size: 20px; /* js edit */
 	line-height: 1.625;
+	margin: 0 0 30px; /* js edit */
+	padding: 0;	/* js edit */
+}
+
+/* js edit remove bottom margin for p last child */
+p:last-child {
+	margin-bottom: 0;
+}
+
+/* js edit */
+ol,
+ul {
+	margin: 0;
 }
 
 /* Regular content width.
@@ -58,58 +100,56 @@ dl {
 ---------------------------------------------------------------------------- */
 
 a {
-	color: #0073e5;
+	color: var(--burgundy) !important;	/* js edit */
+	text-decoration: none;	/* js edit */
 }
 
 a:focus,
 a:hover {
-	color: #333;
-	text-decoration: none;
+	color: var(--light-gray);	/* js edit */
+	text-decoration: underline; /* js edit */
 }
 
+/* js edit change font sizes and weights */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	font-family: "Source Sans Pro", sans-serif;
-	font-weight: 400;
 	line-height: 1.2;
 	margin: 0 0 20px;
+	font-weight: 600;
 }
 
 h1 {
-	font-size: 30px;
+	font-size: 36px;
 }
 
 h2 {
-	font-size: 27px;
+	font-size: 30px;
 }
 
 h3 {
-	font-size: 24px;
-	font-weight: 600;
+	font-size: 27px;
 }
 
 h4 {
-	font-size: 20px;
-	font-weight: 600;
-	margin-top: 40px;
+	font-size: 24px;
 }
 
 h5 {
-	font-size: 18px;
+	font-size: 21px;
 }
 
 h6 {
-	font-size: 16px;
+	font-size: 18px;
 }
 
 .editor-post-title__block .editor-post-title__input {
-	font-family: "Source Sans Pro", sans-serif;
-	font-size: 30px;
-	font-weight: 400;
+	font-family: "PT Sans", sans-serif;	/* js edit */
+	font-size: 36px; /* js edit */
+	font-weight: 600; /* js edit */
 	line-height: 1.2;
 	margin: 0 0 20px;
 }
@@ -339,13 +379,39 @@ table {
 
 /* Buttons
 ---------------------------------------------------------------------------- */
+/* js edit - remove gutenberg-specific button styling */
+/* js edit buttons - add wp-block-button__link, ab-button class to this styling */
+.wp-block-button__link,
+.ab-button {
+	background-color: var(--dark-blue) !important;	/* js edit button color */
+	border: 0;
+	border-radius: 5px !important;	/* js edit - make important bc of gutenberg */
+	color: var(--white);
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 15px 30px;
+	text-align: center;
+	text-decoration: none;
+	white-space: normal;
+	width: auto;
+}
 
+/* js edit add wp... and ab-button */
+.wp-block-button__link:hover,
+.ab-button:hover {
+	/*background-color: #0073e5; js edit remove*/
+	opacity: .7;	/* js edit addition */
+	border-width: 0;
+	color: var(--white);
+}
+
+/*
 .ab-block-cta .ab-button {
 	font-family: "Source Sans Pro", sans-serif;
 	font-weight: 600;
 }
 
-/* js edit - remove gutenberg-specific button styling
 .wp-block-button .wp-block-button__link {
 	border: 0;
 	border-radius: 5px;
@@ -418,4 +484,89 @@ table {
 
 .wp-block[data-align="full"] .wp-block-latest-posts {
 	padding: 0 30px;
+}
+
+/* js edit - boxes/custom blocks
+--------------------------------------------------------------------------*/
+/* blockquote */
+/* add quote mark */
+.wp-block-quote::before {
+	content: "\f122";
+	font-family: dashicons;
+	color: var(--dark-blue);
+	margin-right: 5px;
+	display: inline-block;
+}
+
+.wp-block-quote div {
+	display: inline-block;
+	margin-left: 5px;
+}
+
+.wp-block-quote__citation {
+	margin-left: 30px !important;	/* dashicon width + 10 for margin */
+}
+
+.wp-block-quote {
+	text-align: left;
+	margin-left: 0 !important;
+	/* display: flex;
+	flex-direction: row; */
+}
+
+
+/* quote box */
+/* white (default) */
+.entry-content .wp-block-gccustom-quote-box,
+.wp-block-gccustom-quote-box {
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  padding: 20px;
+	margin: 40px;
+}
+/* gray */
+.entry-content .wp-block-gccustom-quote-box.is-style-gray,
+.wp-block-gccustom-quote-box.is-style-gray,
+.entry-content .wp-block-gccustom-quote-box.is-style-gray-no-title,
+.wp-block-gccustom-quote-box.is-style-gray-no-title {
+  background: var(--off-gray);
+  border: 1px solid var(--light-gray);
+  padding: 20px;
+	margin: 40px;
+}
+/* no title */
+.wp-block-gccustom-quote-box.is-style-no-title h5,
+.wp-block-gccustom-quote-box.is-style-gray-no-title h5 {
+	display: none;
+}
+
+/* fancy quote box */
+.wp-block-gccustom-fancy-quote-box p[aria-label="Title"] {
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+/* blue (default) */
+.entry-content .wp-block-gccustom-fancy-quote-box,
+.wp-block-gccustom-fancy-quote-box {
+  background: var(--light-blue);
+  border-left: 5px solid var(--dark-blue);
+  padding: 2% 2.5%;
+	margin-bottom: 30px;
+}
+/* red (alert) */
+.entry-content .wp-block-gccustom-fancy-quote-box.is-style-alert,
+.wp-block-gccustom-fancy-quote-box.is-style-alert,
+.entry-content .wp-block-gccustom-fancy-quote-box.is-style-alert-no-title,
+.wp-block-gccustom-fancy-quote-box.is-style-alert-no-title {
+  background: var(--light-red);
+  border-left: 5px solid var(--red);
+	color: var(--red);
+  padding: 2% 2.5%;
+	margin-bottom: 30px;
+}
+/* no title */
+.wp-block-gccustom-fancy-quote-box.is-style-no-title p[aria-label="Title"],
+.wp-block-gccustom-fancy-quote-box.is-style-alert-no-title p[aria-label="Title"] {
+	display: none;
 }

@@ -203,7 +203,7 @@ function gc_twenty_comments_gravatar( $args ) {
 //* js edit - Modify the read more link
 add_filter('excerpt_more','sp_read_more_link');	// this is from the gc-ea theme
 function sp_read_more_link() {
-	return '<p><a class="more-link" href="' . get_permalink() . '">Continue Reading</a></p>';
+	return '<p><a class="more-link" href="' . get_permalink() . '">Read More →</a></p>';
 }
 
 //* js edit - full width content actually full width on homepage
@@ -291,10 +291,12 @@ function gc_twenty_after_post() {
 	}
 }
 
-//* js edit - Remove description on paginated archives
+//* js edit - Remove description on paginated archives, blog page
 add_action('genesis_before_content','gc_twenty_archive_description');
 function gc_twenty_archive_description() {
-	if(get_query_var('paged')>1) {
+	if(is_home()) {
+		remove_action('genesis_before_loop','genesis_do_posts_page_heading');
+	} else if(get_query_var('paged')>1) {
 		remove_action('genesis_before_loop','genesis_do_taxonomy_title_description',15);
 		remove_action('genesis_before_loop','genesis_do_author_title_description',15);
 	}
@@ -333,7 +335,7 @@ function be_gutenberg_scripts() {
 }
 add_action( 'enqueue_block_editor_assets', 'be_gutenberg_scripts' );
 
-//* modify blockquote markup for easier styling
+//* js edit modify blockquote markup for easier styling
 add_filter('render_block','gc_block_quote',10,2);
 function gc_block_quote($block_content, $block) {
 	if($block['blockName']==='core/quote') {
@@ -345,4 +347,16 @@ function gc_block_quote($block_content, $block) {
 		$block_content = str_replace($original, $new, $block_content);
 	}
 	return $block_content;
+}
+
+/**
+ * js edit - turn off fullscreen default in editor
+ * @link https://jeanbaptisteaudras.com/en/2020/03/disable-block-editor-default-fullscreen-mode-in-wordpress-5-4/
+*/
+if (is_admin()) {
+	function jba_disable_editor_fullscreen_by_default() {
+    $script = "jQuery( window ).load(function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } });";
+    wp_add_inline_script( 'wp-blocks', $script );
+	}
+	add_action( 'enqueue_block_editor_assets', 'jba_disable_editor_fullscreen_by_default' );
 }
