@@ -174,6 +174,7 @@ body {
 	--light-blue: #a6bbd8;	/* fancy quote box bg */
 	--red: #c8001c;	/* alert box text and border */
 	--light-red: #f2dbdb;	/* alert box bg */
+	--medium-blue: #466ba0;	/* block quote */
 }
 
 /* Typographical Elements
@@ -189,7 +190,7 @@ body {
 	background-color: var(--super-light-gray);	/* js edit */
 	color: var(--medium-dark-gray);	/* js edit */
 	font-family: "PT Sans", sans-serif;	/* js edit */
-	font-size: 20px;	/* js edit */
+	font-size: 18px;	/* js edit */
 	font-weight: 400;
 	line-height: 1.625;
 	margin: 0;
@@ -242,6 +243,18 @@ ul {
 
 li {
 	list-style-type: none;
+}
+
+/* js edit - add extra space between list items */
+.entry-content li {
+	margin-bottom: 10px;
+	line-height: 1.4;
+}
+
+/* js edit - no space befor header */
+.genesis-skip-link li {
+	margin: 0;
+	padding: 0;
 }
 
 hr {
@@ -720,6 +733,12 @@ th {
 /* js edit */
 .type-page .entry-title {
 	padding: 20px;
+}
+
+/* js edit */
+.featured-content .entry-title {
+	margin: 10px 0;
+	padding: 0 20px 0 0;
 }
 
 .entry-title a,
@@ -2103,7 +2122,7 @@ p.entry-meta {
 .wp-block-quote::before {
 	content: "\f122";
 	font-family: dashicons;
-	color: var(--dark-blue);
+	color: var(--medium-blue);
 	margin-right: 5px;
 }
 
@@ -2173,6 +2192,18 @@ p.entry-meta {
 .wp-block-gccustom-fancy-quote-box.is-style-no-title .title,
 .wp-block-gccustom-fancy-quote-box.is-style-alert-no-title .title {
 	display: none;
+}
+
+/* remove paragraph spacing from all boxes */
+.wp-block-gccustom-quote-box p,
+.wp-block-gccustom-quote-box.is-style-gray p,
+.wp-block-gccustom-quote-box.is-style-no-title p,
+.wp-block-gccustom-quote-box.is-style-gray-no-title p,
+.wp-block-gccustom-fancy-quote-box p,
+.wp-block-gccustom-fancy-quote-box.is-style-alert p,
+.wp-block-gccustom-fancy-quote-box.is-style-no-title p,
+.wp-block-gccustom-fancy-quote-box.is-style-alert-no-title p {
+	margin-bottom: 0;
 }
 
 /* js edit add support for class-based boxes */
@@ -2289,4 +2320,9 @@ body #gform_wrapper_3 .gform_footer input[type=submit] {
 	margin-right: auto;
 	max-width: 60%;
 	min-width: 270px;
+}
+
+/* more from category link (under featured posts) */
+p.more-from-category {
+	margin-top: 24px;
 }

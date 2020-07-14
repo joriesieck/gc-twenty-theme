@@ -60,7 +60,7 @@ change entry meta to "by [post_author_posts_link] [post_comments] [post_edit] up
 this isn't the customizer but enabling profile settings (title, description) for the author pages
 archive - set content to 'entry excerpts'
 archive - enable 'display featured image', set size to thumbnail
-footer - [footer_copyright before="Copyright "] · [footer_childtheme_link before="" after=" on"] [footer_genesis_link url="https://www.studiopress.com/" before=""] · [footer_wordpress_link] · [footer_loginout]
+footer - from functions.php in epik theme
 
 content setup:
 front page: each widget has padding left/right 5%
