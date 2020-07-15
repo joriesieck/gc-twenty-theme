@@ -2184,6 +2184,22 @@ p.entry-meta {
   padding: 2% 2.5%;
 	margin-bottom: 30px;
 }
+/* light blue (default alternate) */
+.entry-content .wp-block-gccustom-fancy-quote-box.is-style-default-alt,
+.wp-block-gccustom-fancy-quote-box.is-style-default-alt {
+  background: var(--super-light-blue);
+  border-left: 5px solid var(--medium-blue);
+  padding: 2% 2.5%;
+	margin-bottom: 30px;
+}
+/* light blue (2nd default alternate) */
+.entry-content .wp-block-gccustom-fancy-quote-box.is-style-default-alt-2,
+.wp-block-gccustom-fancy-quote-box.is-style-default-alt-2 {
+  background: var(--super-light-blue);
+  border-left: 5px solid var(--light-blue);
+  padding: 2% 2.5%;
+	margin-bottom: 30px;
+}
 /* red (alert) */
 .entry-content .wp-block-gccustom-fancy-quote-box.is-style-alert,
 .wp-block-gccustom-fancy-quote-box.is-style-alert,
@@ -2217,17 +2233,20 @@ p.entry-meta {
 .wp-block-gccustom-reference-box {
 	background-color: var(--super-light-blue);
 	padding: 40px;
+	margin-top: 10px;
 }
 .wp-block-gccustom-reference-box p,
 .wp-block-gccustom-reference-box h4 {
 	margin-bottom: 10px;
 }
 .wp-block-gccustom-reference-box p {
+	font-size: 14px;
 	padding-left: 50px;
 	text-indent: -50px;
 }
 
-/* js edit add support for class-based boxes */
+/* js edit - add support for class-based boxes
+------------------------------------------------------------------------------*/
 .quote {
 	background: #fff;
 	border-radius: 6px;

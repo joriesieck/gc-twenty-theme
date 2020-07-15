@@ -26,6 +26,14 @@ wp.domReady(() => {
 			isDefault: true,
 		},
 		{
+			name: 'default-alt',
+			label: 'Default (Alt)',
+		},
+		{
+			name: 'default-alt-2',
+			label: 'Default (Alt 2)'
+		},
+		{
 			name: 'alert',
 			label: 'Alert',
 		},

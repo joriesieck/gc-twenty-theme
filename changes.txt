@@ -53,6 +53,7 @@ gutenberg/inline-styles.php - remove gutenberg-specific button styling
 gutenberg/style-editor.css - remove gutenberg-specific button styling, add styling to match front end
 gutenberg/front-end.css - remove gutenberg-specific button styling
 assets/js/editor.js - add style options to blocks
+config/appearance.php - change color palette options
 
 Customizer:
 add logo to header - set max-width to 220px
