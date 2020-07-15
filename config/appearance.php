@@ -44,33 +44,33 @@ return [
 	// 'button-outline-hover' => $gc_twenty_link_color_brightness,
 	'link-color'           => $gc_twenty_link_color,
 	'default-colors'       => $gc_twenty_default_colors,
-	'editor-color-palette' => [
-		[
-			'name'  => __( 'Dark Blue', 'gc-twenty' ), // Called “Link Color” in the Customizer options. Renamed because “Link Color” implies it can only be used for links.
+	'editor-color-palette' => array(
+		array(
+			'name'  => 'Dark Blue',
 			'slug'  => 'dark-blue',
-			'color' => $gc_twenty_default_colors['dark-blue'],
-		],
-		[
-			'name'  => __( 'Medium Blue', 'gc-twenty' ),
+			'color' => '#293f5e',
+		),
+		array(
+			'name'  => 'Medium Blue',
 			'slug'  => 'medium-blue',
-			'color' => $gc_twenty_default_colors['medium-blue'],
-		],
-		[
-			'name'  => __( 'Light Blue', 'gc-twenty' ),
+			'color' => '#466ba0',
+		),
+		array(
+			'name'  => 'Light Blue',
 			'slug'  => 'light-blue',
-			'color' => $gc_twenty_default_colors['light-blue'],
-		],
-		[
-			'name'  => __( 'Super Light Blue', 'gc-twenty' ),
+			'color' => '#a6bbd8',
+		),
+		array(
+			'name'  => 'Super Light Blue',
 			'slug'  => 'super-light-blue',
-			'color' => $gc_twenty_default_colors['super-light-blue'],
-		],
-		[
-			'name'  => __( 'Burgundy', 'gc-twenty' ),
+			'color' => '#edf1f7',
+		),
+		array(
+			'name'  => 'Burgundy',
 			'slug'  => 'burgundy',
-			'color' => $gc_twenty_default_colors['burgundy'],
-		]
-	],
+			'color' => '#800020',
+		),
+	),
 	'editor-font-sizes'    => [
 		[
 			'name' => __( 'Small', 'gc-twenty' ),

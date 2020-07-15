@@ -2245,6 +2245,47 @@ p.entry-meta {
 	text-indent: -50px;
 }
 
+/* publication */
+.wp-block-gccustom-publication {
+	padding-left: 50px;
+	text-indent: -50px;
+	padding-bottom: 30px;
+}
+
+/* custom color palette support */
+/* backgrounds */
+.has-dark-blue-background-color {
+	background: var(--dark-blue);
+}
+.has-medium-blue-background-color {
+	background: var(--medium-blue);
+}
+.has-light-blue-background-color {
+	background: var(--light-blue);
+}
+.has-super-light-blue-background-color {
+	background: var(--super-light-blue);
+}
+.has-burgundy-background-color {
+	background: var(--burgundy);
+}
+/* text */
+.has-dark-blue-color {
+	color: var(--dark-blue);
+}
+.has-medium-blue-color {
+	color: var(--medium-blue);
+}
+.has-light-blue-color {
+	color: var(--light-blue);
+}
+.has-super-light-blue-color {
+	color: var(--super-light-blue);
+}
+.has-burgundy-color {
+	color: var(--burgundy);
+}
+
 /* js edit - add support for class-based boxes
 ------------------------------------------------------------------------------*/
 .quote {

@@ -360,3 +360,32 @@ if (is_admin()) {
 	}
 	add_action( 'enqueue_block_editor_assets', 'jba_disable_editor_fullscreen_by_default' );
 }
+
+//* js edit - add editor color palette
+// add_theme_support('editor-color-palette', array(
+// 	array(
+// 		'name'  => 'Dark Blue',
+// 		'slug'  => 'dark-blue',
+// 		'color' => '#293f5e',
+// 	),
+// 	array(
+// 		'name'  => 'Medium Blue',
+// 		'slug'  => 'medium-blue',
+// 		'color' => '#466ba0',
+// 	),
+// 	array(
+// 		'name'  => 'Light Blue',
+// 		'slug'  => 'light-blue',
+// 		'color' => '#a6bbd8',
+// 	),
+// 	array(
+// 		'name'  => 'Super Light Blue',
+// 		'slug'  => 'super-light-blue',
+// 		'color' => '#edf1f7',
+// 	),
+// 	array(
+// 		'name'  => 'Burgundy',
+// 		'slug'  => 'burgundy',
+// 		'color' => '#800020',
+// 	),
+// ));

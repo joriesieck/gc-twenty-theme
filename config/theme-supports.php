@@ -38,5 +38,5 @@ return [
 	'genesis-menus'                   => [
 		'primary'   => __( 'Header Menu', 'gc-twenty' ),
 		'secondary' => __( 'Footer Menu', 'gc-twenty' ),
-	],
+	]
 ];
