@@ -175,6 +175,7 @@ body {
 	--red: #c8001c;	/* alert box text and border */
 	--light-red: #f2dbdb;	/* alert box bg */
 	--medium-blue: #466ba0;	/* block quote */
+	--super-light-blue: #edf1f7;	/* references bg */
 }
 
 /* Typographical Elements
@@ -659,6 +660,12 @@ th {
 .archive-description,
 .author-box {
 	margin-bottom: 40px;
+}
+
+.archive-description {
+	background-color: var(--white);
+	margin: 20px 0;
+	padding: 40px;
 }
 
 .after-entry {
@@ -2204,6 +2211,20 @@ p.entry-meta {
 .wp-block-gccustom-fancy-quote-box.is-style-no-title p,
 .wp-block-gccustom-fancy-quote-box.is-style-alert-no-title p {
 	margin-bottom: 0;
+}
+
+/* references */
+.wp-block-gccustom-reference-box {
+	background-color: var(--super-light-blue);
+	padding: 40px;
+}
+.wp-block-gccustom-reference-box p,
+.wp-block-gccustom-reference-box h4 {
+	margin-bottom: 10px;
+}
+.wp-block-gccustom-reference-box p {
+	padding-left: 50px;
+	text-indent: -50px;
 }
 
 /* js edit add support for class-based boxes */
